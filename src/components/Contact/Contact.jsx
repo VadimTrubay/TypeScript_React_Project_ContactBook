@@ -101,6 +101,7 @@ const Contact = ({ item: { name, number, id } }) => {
               id="name"
               name="name"
               variant="standard"
+              color="success"
               value={formik.values.name}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -111,6 +112,7 @@ const Contact = ({ item: { name, number, id } }) => {
               id="number"
               name="number"
               variant="standard"
+              color="success"
               value={formik.values.number}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
