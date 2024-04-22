@@ -1,0 +1,28 @@
+.avatar {
+  background-color: var(--brand-color-contactbook);
+  border: 1px solid #ffffff;
+  margin-right: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.nav_link {
+  font-weight: bold;
+  color: var(--link);
+  text-decoration: none;
+}
+
+.nav_link:hover {
+  color: var(--link-hover);
+}
+
+.username {
+  margin-right: 20px;
+  font-weight: bold;
+  color: #000000;
+}

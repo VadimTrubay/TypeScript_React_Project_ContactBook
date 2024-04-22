@@ -1,0 +1,14 @@
+.container {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.nav_link {
+  font-weight: bold;
+  color: var(--link);
+  text-decoration: none;
+}
+
+.nav_link:hover {
+  color: var(--brand-color-contactbook);
+}

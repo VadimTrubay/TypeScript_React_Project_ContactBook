@@ -1,0 +1,9 @@
+.app_bar {
+  background-color: var(--brand-color-contactbook);
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_link {
+  text-decoration: none;
+}

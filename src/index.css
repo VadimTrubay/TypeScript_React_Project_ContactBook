@@ -1,0 +1,29 @@
+:root {
+  --brand-color-contactbook: #2aaf00;
+  --brand-color-contactbook-hover: #2b8f06;
+  --link: #000000;
+  --link-hover: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
