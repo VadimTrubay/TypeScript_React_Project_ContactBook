@@ -44,6 +44,7 @@ const ContactForm = () => {
               label="Name*"
               name="name"
               variant="standard"
+              color="success"
               sx={{ width: 400 }}
               placeholder="a-z, A-Z"
             />
@@ -54,7 +55,7 @@ const ContactForm = () => {
               label="Number*"
               name="number"
               variant="standard"
-              type="string"
+              color="success"
               sx={{ width: 400 }}
               placeholder="+xxxxxxxxxx"
             />
