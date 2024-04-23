@@ -1,4 +1,5 @@
 import "modern-normalize";
+import styles from "./App.module.css"
 import { Route, Routes } from "react-router-dom";
 import { lazy, useEffect } from "react";
 import { Layout } from "./Layout/Layout.jsx";
@@ -34,7 +35,7 @@ const App = () => {
       <LinearProgress color="success" />
     </Box>
   ) : (
-    <Layout>
+    <Layout className={styles.container}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

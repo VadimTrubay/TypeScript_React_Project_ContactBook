@@ -1,9 +1,9 @@
 .avatar {
   background-color: #a1a1a1;
   border: 1px solid #ffffff;
-  margin-right: 15px;
   width: 30px;
   height: 30px;
+  margin: 0 auto;
 }
 
 .contact {

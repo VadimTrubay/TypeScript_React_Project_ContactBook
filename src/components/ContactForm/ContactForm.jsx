@@ -44,8 +44,7 @@ const ContactForm = () => {
               label="Name*"
               name="name"
               variant="standard"
-              color="success"
-              sx={{ width: 400 }}
+              sx={{ minWidth: 400 }}
               placeholder="a-z, A-Z"
             />
           </StyledLabel>
@@ -55,14 +54,16 @@ const ContactForm = () => {
               label="Number*"
               name="number"
               variant="standard"
-              color="success"
-              sx={{ width: 400 }}
+              type="string"
+              sx={{ minWidth: 400 }}
               placeholder="+xxxxxxxxxx"
             />
           </StyledLabel>
-          <Button className={styles.button} variant="contained" type="submit">
-            Add contact
-          </Button>
+          <div className={styles.button_center}>
+            <Button className={styles.button} variant="contained" type="submit">
+              Add contact
+            </Button>
+          </div>
         </StyledForm>
       </Formik>
       <Toaster position="top-center" />

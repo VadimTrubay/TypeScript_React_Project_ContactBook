@@ -6,7 +6,7 @@
 
 .table {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 900px;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -18,10 +18,11 @@
 .paper {
   width: 100%;
   overflow: hidden;
+  padding: 0;
 }
 
 .swap_icon {
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
   color: #ffffff;
 }

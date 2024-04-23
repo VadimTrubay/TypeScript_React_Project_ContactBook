@@ -61,11 +61,11 @@ const ContactList = () => {
   );
 
   const columns = [
-    { id: "avatar", label: "avatar", minWidth: 30 },
-    { id: "name", label: boxName, minWidth: 90 },
-    { id: "number", label: "number", minWidth: 90 },
-    { id: "edit", label: "edit", minWidth: 40 },
-    { id: "delete", label: "delete", minWidth: 40 },
+    { id: "avatar", label: "avatar", minWidth: 30, align: "center" },
+    { id: "name", label: boxName, minWidth: 120, align: "center" },
+    { id: "number", label: "number", minWidth: 120, align: "center" },
+    { id: "edit", label: "edit", minWidth: 40, align: "center" },
+    { id: "delete", label: "delete", minWidth: 40, align: "center" },
   ];
 
   return (
@@ -83,13 +83,13 @@ const ContactList = () => {
                     <TableCell
                       key={column.id}
                       align={column.align}
-                      style={{
+                      sx={{
                         minWidth: column.minWidth,
-                        fontSize: "20px",
-                        // fontWeight: 'bold',
-                        align: "center",
+                        fontSize: "16px",
+                        fontWeight: 'bold',
                         backgroundColor: "#2aaf00",
                         color: "white",
+                        padding: "3px",
                       }}
                     >
                       {column.label}
@@ -138,18 +138,3 @@ const ContactList = () => {
 };
 
 export default ContactList;
-
-// <TableBody>
-// {filteredContacts.length > 0 ?
-// filteredContacts.map(item => (
-//   <TableRow key={item.id}>
-//     <Contact item={item}/>
-//   </TableRow>
-// )) :
-// sortedContacts.map(item => (
-//   <TableRow key={item.id}>
-//     <Contact item={item}/>
-//   </TableRow>
-// ))
-// }
-// </TableBody>

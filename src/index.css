@@ -5,6 +5,15 @@
   --link-hover: #ffffff;
 }
 
+@media  (max-width: 425px) {
+  #root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+}
+
+
 h1,
 h2,
 h3,

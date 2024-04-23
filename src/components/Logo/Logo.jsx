@@ -7,14 +7,14 @@ const Logo = () => {
     <div className={styles.nav_link}>
       <AdbIcon />
       <Typography
-        variant="h5"
+        variant="h6"
         noWrap
         component="a"
         sx={{
           mr: 2,
           fontFamily: "monospace",
           fontWeight: 700,
-          letterSpacing: ".3rem",
+          letterSpacing: ".1rem",
           color: "inherit",
           textDecoration: "none",
         }}

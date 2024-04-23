@@ -59,15 +59,16 @@ const Contact = ({ item: { name, number, id } }) => {
 
   return (
     <>
-      <TableCell component="th" scope="row">
+      <TableCell component="th" scope="row"
+        sx={{padding: "3px"}}>
         <Avatar className={styles.avatar} />
       </TableCell>
-      <TableCell align="center">{name}</TableCell>
-      <TableCell align="center">{number}</TableCell>
-      <TableCell align="center">
+      <TableCell sx={{padding: "3px"}} align="center">{name}</TableCell>
+      <TableCell sx={{padding: "3px"}} align="center">{number}</TableCell>
+      <TableCell sx={{padding: "3px"}} align="center">
         <Grid item xs={2}>
           <EditIcon
-            sx={{ color: "#2aaf00" }}
+            sx={{ color: "#2aaf00", padding: "3px" }}
             cursor="pointer"
             onClick={() => handleOpenEditModal()}
           />
@@ -76,7 +77,7 @@ const Contact = ({ item: { name, number, id } }) => {
       <TableCell align="center">
         <Grid item xs={2}>
           <DeleteForeverIcon
-            sx={{ color: "#961010" }}
+            sx={{ color: "#961010", padding: "3px" }}
             cursor="pointer"
             onClick={handleOpenDeleteModal}
           />
@@ -101,7 +102,6 @@ const Contact = ({ item: { name, number, id } }) => {
               id="name"
               name="name"
               variant="standard"
-              color="success"
               value={formik.values.name}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -112,7 +112,6 @@ const Contact = ({ item: { name, number, id } }) => {
               id="number"
               name="number"
               variant="standard"
-              color="success"
               value={formik.values.number}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}

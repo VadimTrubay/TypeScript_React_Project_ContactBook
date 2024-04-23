@@ -7,13 +7,13 @@ import Navigation from "../Navigation/Navigation.jsx";
 
 export const Layout = ({ children }) => {
   return (
-    <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 16px" }}>
+    <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 15px" }}>
       <Header />
       <Navigation />
       <Suspense
         fallback={
           <Box sx={{ width: "100%" }}>
-            <LinearProgress color="success"/>
+            <LinearProgress color="success" />
           </Box>
         }
       >

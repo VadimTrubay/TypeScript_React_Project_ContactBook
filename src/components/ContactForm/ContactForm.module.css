@@ -2,6 +2,10 @@
   background-color: var(--brand-color-contactbook);
 }
 
+.button_center {
+  margin: 0 auto;
+}
+
 .button:hover {
   background-color: var(--brand-color-contactbook-hover);
 }
