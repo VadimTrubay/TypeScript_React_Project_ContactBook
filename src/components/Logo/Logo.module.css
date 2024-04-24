@@ -1,11 +1,15 @@
+.container h6 {
+  display: inline;
+}
+
 .nav_link {
   font-weight: bold;
   color: #000000;
   text-decoration: none;
 }
 
-/* .nav_link:hover {
+.nav_link:hover {
   color: #ffffff;
   cursor: pointer;
-} */
+}
 
