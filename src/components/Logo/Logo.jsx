@@ -5,7 +5,7 @@ import styles from "./Logo.module.css";
 const Logo = () => {
   return (
     <div className={styles.nav_link}>
-      <AdbIcon />
+      <AdbIcon sx={{fontSize: "15px"}} />
       <Typography
         variant="h6"
         noWrap
