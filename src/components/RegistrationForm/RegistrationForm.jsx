@@ -16,7 +16,7 @@ import {Checkbox} from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import {useState} from "react";
 import {useFormik} from "formik";
-import {validationSchemaRegistration} from "../../validate/validationSchemaRegistration.ts";
+import {validationSchemaRegistration} from "../../validate/validationSchemaRegistration.js";
 
 export const defaultTheme = createTheme();
 

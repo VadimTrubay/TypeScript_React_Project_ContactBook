@@ -18,7 +18,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import Box from "@mui/material/Box";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import {useFormik} from "formik";
-import {validationSchema} from "../../validate/validationSchema.ts";
+import {validationSchema} from "../../validate/validationSchema.js";
 
 const Contact = ({item: {name, number, id}}) => {
   const [openEditModal, setOpenEditModal] = useState(false);

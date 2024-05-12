@@ -5,7 +5,7 @@ import {TextField} from "formik-mui";
 import Button from "@mui/material/Button";
 import {StyledForm, StyledLabel} from "./ContactForm.styled";
 import {addContact} from "../../redux/contacts/operations";
-import {validationSchema} from "../../validate/validationSchema.ts";
+import {validationSchema} from "../../validate/validationSchema.js";
 import {selectContacts} from "../../redux/contacts/selectors.js";
 import styles from "./ContactForm.module.css";
 

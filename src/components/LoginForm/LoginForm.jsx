@@ -14,7 +14,7 @@ import {useFormik} from "formik";
 import {defaultTheme} from "../RegistrationForm/RegistrationForm";
 import {logIn} from "../../redux/auth/operations.js";
 import {Span} from "./LoginForm.styled.js";
-import {validationSchemaLogin} from "../../validate/validationSchemaLogin.ts";
+import {validationSchemaLogin} from "../../validate/validationSchemaLogin.js";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
