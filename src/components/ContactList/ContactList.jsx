@@ -1,7 +1,7 @@
 import Contact from "../../components/Contact/Contact";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
-import { useDispatch, useSelector } from "react-redux";
-import { selectFilteredContacts } from "../../redux/filters/selectors.js";
+import {useDispatch, useSelector} from "react-redux";
+import {selectFilteredContacts} from "../../redux/filters/selectors.js";
 import {
   Paper,
   Table,
@@ -12,8 +12,8 @@ import {
   TableRow,
 } from "@mui/material";
 import TableCell from "@mui/material/TableCell";
-import { useEffect, useState } from "react";
-import { fetchContacts } from "../../redux/contacts/operations.js";
+import {useEffect, useState} from "react";
+import {fetchContacts} from "../../redux/contacts/operations.js";
 import SearchBox from "../SearchBox/SearchBox.jsx";
 import Box from "@mui/material/Box";
 import styles from "./ContactList.module.css";
@@ -56,22 +56,22 @@ const ContactList = () => {
   const boxName = (
     <Box className={styles.box_name}>
       <span>name</span>
-      <SwapVertIcon onClick={handleSortedByName} className={styles.swap_icon} />
+      <SwapVertIcon onClick={handleSortedByName} className={styles.swap_icon}/>
     </Box>
   );
 
   const columns = [
-    { id: "avatar", label: "avatar", minWidth: 30, align: "center" },
-    { id: "name", label: boxName, minWidth: 120, align: "center" },
-    { id: "number", label: "number", minWidth: 120, align: "center" },
-    { id: "edit", label: "edit", minWidth: 40, align: "center" },
-    { id: "delete", label: "delete", minWidth: 40, align: "center" },
+    {id: "avatar", label: "avatar", minWidth: 30, align: "center"},
+    {id: "name", label: boxName, minWidth: 120, align: "center"},
+    {id: "number", label: "number", minWidth: 120, align: "center"},
+    {id: "edit", label: "edit", minWidth: 40, align: "center"},
+    {id: "delete", label: "delete", minWidth: 40, align: "center"},
   ];
 
   return (
     <>
       <div>
-        <SearchBox />
+        <SearchBox/>
       </div>
       <div className={styles.table}>
         <Paper className={styles.paper}>
@@ -89,7 +89,7 @@ const ContactList = () => {
                         fontWeight: 'bold',
                         backgroundColor: "#2aaf00",
                         color: "white",
-                        padding: "3px",
+                        padding: "8px",
                       }}
                     >
                       {column.label}
@@ -100,25 +100,25 @@ const ContactList = () => {
               <TableBody>
                 {filteredContacts.length > 0
                   ? filteredContacts
-                      .slice(
-                        page * rowsPerPage,
-                        page * rowsPerPage + rowsPerPage
-                      )
-                      .map((item) => (
-                        <TableRow key={item.id}>
-                          <Contact item={item} />
-                        </TableRow>
-                      ))
+                    .slice(
+                      page * rowsPerPage,
+                      page * rowsPerPage + rowsPerPage
+                    )
+                    .map((item) => (
+                      <TableRow key={item.id} sx={{'&:nth-of-type(even)': {backgroundColor: '#efefef'}}}>
+                        <Contact item={item}/>
+                      </TableRow>
+                    ))
                   : sortedContacts
-                      .slice(
-                        page * rowsPerPage,
-                        page * rowsPerPage + rowsPerPage
-                      )
-                      .map((item) => (
-                        <TableRow key={item.id}>
-                          <Contact item={item} />
-                        </TableRow>
-                      ))}
+                    .slice(
+                      page * rowsPerPage,
+                      page * rowsPerPage + rowsPerPage
+                    )
+                    .map((item) => (
+                      <TableRow key={item.id} sx={{'&:nth-of-type(even)': {backgroundColor: '#efefef'}}}>
+                        <Contact item={item}/>
+                      </TableRow>
+                    ))}
               </TableBody>
             </Table>
           </TableContainer>

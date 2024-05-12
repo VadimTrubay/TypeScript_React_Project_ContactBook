@@ -1,12 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import toast, { Toaster } from "react-hot-toast";
-import { Formik, Field } from "formik";
-import { TextField } from "formik-mui";
+import {useDispatch, useSelector} from "react-redux";
+import toast, {Toaster} from "react-hot-toast";
+import {Formik, Field} from "formik";
+import {TextField} from "formik-mui";
 import Button from "@mui/material/Button";
-import { StyledForm, StyledLabel } from "./ContactForm.styled";
-import { addContact } from "../../redux/contacts/operations";
-import { validationSchema } from "../../validate/validationSchema.js";
-import { selectContacts } from "../../redux/contacts/selectors.js";
+import {StyledForm, StyledLabel} from "./ContactForm.styled";
+import {addContact} from "../../redux/contacts/operations";
+import {validationSchema} from "../../validate/validationSchema.ts";
+import {selectContacts} from "../../redux/contacts/selectors.js";
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
@@ -45,7 +45,7 @@ const ContactForm = () => {
               name="name"
               variant="standard"
               color="success"
-              sx={{ minWidth: 400 }}
+              sx={{minWidth: 400}}
               placeholder="a-z, A-Z"
             />
           </StyledLabel>
@@ -57,7 +57,7 @@ const ContactForm = () => {
               variant="standard"
               color="success"
               type="string"
-              sx={{ minWidth: 400 }}
+              sx={{minWidth: 400}}
               placeholder="+xxxxxxxxxx"
             />
           </StyledLabel>
@@ -68,7 +68,7 @@ const ContactForm = () => {
           </div>
         </StyledForm>
       </Formik>
-      <Toaster position="top-center" />
+      <Toaster position="top-center"/>
     </>
   );
 };

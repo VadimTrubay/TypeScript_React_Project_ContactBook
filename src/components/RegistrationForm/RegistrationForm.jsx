@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {Link} from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -9,14 +9,14 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { register } from "../../redux/auth/operations.js";
-import { Span } from "./RegistrationForm.styled.js";
-import { Checkbox } from "@mui/material";
+import {createTheme, ThemeProvider} from "@mui/material/styles";
+import {register} from "../../redux/auth/operations.js";
+import {Span} from "./RegistrationForm.styled.js";
+import {Checkbox} from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import { useState } from "react";
-import { useFormik } from "formik";
-import { validationSchemaRegistration } from "../../validate/validationSchemaRegistration.js";
+import {useState} from "react";
+import {useFormik} from "formik";
+import {validationSchemaRegistration} from "../../validate/validationSchemaRegistration.ts";
 
 export const defaultTheme = createTheme();
 
@@ -51,7 +51,7 @@ const RegistrationForm = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
-        <CssBaseline />
+        <CssBaseline/>
         <Box
           sx={{
             marginTop: 8,
@@ -60,8 +60,8 @@ const RegistrationForm = () => {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "#2aaf00" }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{m: 1, bgcolor: "#2aaf00"}}>
+            <LockOutlinedIcon/>
           </Avatar>
           <Typography component="h1" variant="h5">
             Register
@@ -69,7 +69,7 @@ const RegistrationForm = () => {
           <Box
             component="form"
             onSubmit={formik.handleSubmit}
-            sx={{ mt: 1, borderColor: "red" }}
+            sx={{mt: 1, borderColor: "red"}}
           >
             <Grid container spacing={2}>
               <Grid item xs={12}>
@@ -127,7 +127,7 @@ const RegistrationForm = () => {
             </Grid>
             <FormControlLabel
               control={
-                <Checkbox id="termsCheck" name="termsCheck" color="primary" />
+                <Checkbox id="termsCheck" name="termsCheck" color="primary"/>
               }
               id="termsCheck"
               name="termsCheck"
@@ -139,7 +139,7 @@ const RegistrationForm = () => {
               color="success"
               fullWidth
               variant="contained"
-              sx={{ bgcolor: "#2aaf00" }}
+              sx={{bgcolor: "#2aaf00"}}
               disabled={!terms}
             >
               Register

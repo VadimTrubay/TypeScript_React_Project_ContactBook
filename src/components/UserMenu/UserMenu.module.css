@@ -19,10 +19,10 @@
 
 .nav_link:hover {
   color: var(--link-hover);
+  cursor: pointer;
 }
 
 .username {
   margin-right: 20px;
   font-weight: bold;
-  color: #000000;
 }

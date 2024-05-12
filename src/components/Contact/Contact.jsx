@@ -1,26 +1,26 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import {useState} from "react";
+import {useDispatch} from "react-redux";
 import TableCell from "@mui/material/TableCell";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { TextField } from "@mui/material";
+import {TextField} from "@mui/material";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Grid from "@mui/material/Grid";
 import EditIcon from "@mui/icons-material/Edit";
 import Avatar from "@mui/material/Avatar";
-import { deleteContact, updateContact } from "../../redux/contacts/operations";
-import { StyledBox, Text } from "./Contact.styled";
-import { style } from "./Contact.styled";
+import {deleteContact, updateContact} from "../../redux/contacts/operations";
+import {StyledBox, Text} from "./Contact.styled";
+import {style} from "./Contact.styled";
 import styles from "./Contact.module.css";
 import toast from "react-hot-toast";
 import DoneIcon from "@mui/icons-material/Done";
 import Box from "@mui/material/Box";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { useFormik } from "formik";
-import { validationSchema } from "../../validate/validationSchema.js";
+import {useFormik} from "formik";
+import {validationSchema} from "../../validate/validationSchema.ts";
 
-const Contact = ({ item: { name, number, id } }) => {
+const Contact = ({item: {name, number, id}}) => {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const dispatch = useDispatch();
@@ -60,15 +60,15 @@ const Contact = ({ item: { name, number, id } }) => {
   return (
     <>
       <TableCell component="th" scope="row"
-        sx={{padding: "3px"}}>
-        <Avatar className={styles.avatar} />
+                 sx={{padding: "3px"}}>
+        <Avatar className={styles.avatar}/>
       </TableCell>
       <TableCell sx={{padding: "3px"}} align="center">{name}</TableCell>
       <TableCell sx={{padding: "3px"}} align="center">{number}</TableCell>
       <TableCell sx={{padding: "3px"}} align="center">
         <Grid item xs={2}>
           <EditIcon
-            sx={{ color: "#2aaf00", padding: "3px" }}
+            sx={{color: "#2aaf00", padding: "3px"}}
             cursor="pointer"
             onClick={() => handleOpenEditModal()}
           />
@@ -77,7 +77,7 @@ const Contact = ({ item: { name, number, id } }) => {
       <TableCell align="center">
         <Grid item xs={2}>
           <DeleteForeverIcon
-            sx={{ color: "#961010", padding: "3px" }}
+            sx={{color: "#961010", padding: "3px"}}
             cursor="pointer"
             onClick={handleOpenDeleteModal}
           />
@@ -92,7 +92,7 @@ const Contact = ({ item: { name, number, id } }) => {
       >
         <Box sx={style}>
           <div className={styles.close}>
-            <HighlightOffIcon onClick={closeModal} />
+            <HighlightOffIcon onClick={closeModal}/>
           </div>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <Text className={styles.title_edit}>Edit contact</Text>
@@ -121,10 +121,10 @@ const Contact = ({ item: { name, number, id } }) => {
               helperText={formik.touched.number && formik.errors.number}
             />
             <Button type="submit">
-              <DoneIcon sx={{ fontSize: 40, color: "green" }} />
+              <DoneIcon sx={{fontSize: 40, color: "green"}}/>
             </Button>
           </StyledBox>
-          <Typography id="modal-modal-description" sx={{ mt: 3 }}></Typography>
+          <Typography id="modal-modal-description" sx={{mt: 3}}></Typography>
         </Box>
       </Modal>
       <Modal
@@ -135,7 +135,7 @@ const Contact = ({ item: { name, number, id } }) => {
       >
         <Box sx={style}>
           <div className={styles.close}>
-            <HighlightOffIcon onClick={closeModal} />
+            <HighlightOffIcon onClick={closeModal}/>
           </div>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <Text className={styles.title_delete}>Delete contact</Text>
@@ -144,10 +144,10 @@ const Contact = ({ item: { name, number, id } }) => {
           </Typography>
           <StyledBox component="form" onSubmit={handleDeleteContact}>
             <Button type="submit">
-              <DoneIcon sx={{ fontSize: 40, color: "red" }} />
+              <DoneIcon sx={{fontSize: 40, color: "red"}}/>
             </Button>
           </StyledBox>
-          <Typography id="modal-modal-description" sx={{ mt: 3 }}></Typography>
+          <Typography id="modal-modal-description" sx={{mt: 3}}></Typography>
         </Box>
       </Modal>
     </>

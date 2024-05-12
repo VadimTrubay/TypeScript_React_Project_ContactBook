@@ -1,5 +1,6 @@
 .button {
   background-color: var(--brand-color-contactbook);
+  font-weight: bold;
 }
 
 .button_center {

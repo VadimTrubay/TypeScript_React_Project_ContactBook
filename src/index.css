@@ -1,16 +1,17 @@
 :root {
-  --brand-color-contactbook: #2aaf00;
-  --brand-color-contactbook-hover: #2b8f06;
-  --link: #000000;
-  --link-hover: #ffffff;
+  --brand-color-contactbook: #24a901;
+  --brand-color-contactbook-hover: #1d7e00;
+  --link: #ffffff;
+  --link-hover: #000000;
+  --table-child: #efefef;
 }
 
-@media  (max-width: 425px) {
+@media (max-width: 425px) {
   #root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 }
 
 

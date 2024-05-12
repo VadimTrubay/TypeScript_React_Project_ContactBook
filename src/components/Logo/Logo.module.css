@@ -4,12 +4,12 @@
 
 .nav_link {
   font-weight: bold;
-  color: #000000;
+  color: var(--link);
   text-decoration: none;
 }
 
 .nav_link:hover {
-  color: #ffffff;
+  color: var(--link-hover);
   cursor: pointer;
 }
 

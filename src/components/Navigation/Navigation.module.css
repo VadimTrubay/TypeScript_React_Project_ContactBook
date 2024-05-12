@@ -9,6 +9,16 @@
   text-decoration: none;
 }
 
+.nav_link_breadcrumb {
+  font-weight: bold;
+  color: var(--brand-color-contactbook);
+  text-decoration: none;
+}
+
+.nav_link_breadcrumb:hover {
+  color: var(--link-hover);
+}
+
 .nav_link:hover {
   color: var(--brand-color-contactbook);
 }

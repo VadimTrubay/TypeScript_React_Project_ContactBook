@@ -1,21 +1,21 @@
 import Typography from "@mui/material/Typography";
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import styles from "../Navigation/Navigation.module.css";
-import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../redux/auth/selectors.js";
-import { Breadcrumbs } from "@mui/material";
+import {useSelector} from "react-redux";
+import {selectIsLoggedIn} from "../../redux/auth/selectors.js";
+import {Breadcrumbs} from "@mui/material";
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <div className={styles.container}>
       <Breadcrumbs aria-label="breadcrumb">
-        <NavLink className={styles.nav_link} to={"/"}>
+        <NavLink className={styles.nav_link_breadcrumb} to={"/"}>
           HOME
         </NavLink>
         {isLoggedIn && (
           <Typography>
-            <NavLink className={styles.nav_link} to={"/contacts"}>
+            <NavLink className={styles.nav_link_breadcrumb} to={"/contacts"}>
               CONTACTS
             </NavLink>
           </Typography>

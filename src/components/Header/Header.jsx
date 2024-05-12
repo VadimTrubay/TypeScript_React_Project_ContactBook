@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux";
-import { selectError } from "../../redux/contacts/selectors.js";
-import { AppBar, CircularProgress, Toolbar } from "@mui/material";
-import Logo from "../Logo/Logo.jsx";
+import {useSelector} from "react-redux";
+import {selectError} from "../../redux/contacts/selectors.js";
+import {AppBar, CircularProgress, Toolbar} from "@mui/material";
+import Logo from "../Logo/Logo.tsx";
 import UserMenu from "../UserMenu/UserMenu.jsx";
 import AuthNav from "../AuthNav/AuthNav.jsx";
-import { selectIsLoggedIn } from "../../redux/auth/selectors.js";
-import { selectIsLoading } from "../../redux/contacts/selectors.js";
+import {selectIsLoggedIn} from "../../redux/auth/selectors.js";
+import {selectIsLoading} from "../../redux/contacts/selectors.js";
 import styles from "./Header.module.css";
 
 const Header = () => {
@@ -17,8 +17,8 @@ const Header = () => {
     <>
       <AppBar className={styles.app_bar} position="static">
         <Toolbar className={styles.app_bar}>
-          <Logo />
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          <Logo/>
+          {isLoggedIn ? <UserMenu/> : <AuthNav/>}
         </Toolbar>
       </AppBar>
       {isLoading && !error && (
