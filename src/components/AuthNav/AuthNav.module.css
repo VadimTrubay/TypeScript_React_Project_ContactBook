@@ -10,3 +10,9 @@
 .nav_link:hover {
   color: var(--link-hover);
 }
+
+.container {
+  /*margin: 0 auto;*/
+  /*max-width: 1200px;*/
+  /*padding: 0 15px;*/
+}

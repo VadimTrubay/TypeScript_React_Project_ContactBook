@@ -1,7 +1,8 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import {Box, Button, Container, Grid, Typography} from "@mui/material";
 import styles from "./NotFoundPage.module.css";
+import React from "react";
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <Box
       sx={{

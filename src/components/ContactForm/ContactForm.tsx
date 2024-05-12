@@ -1,17 +1,28 @@
 import {useDispatch, useSelector} from "react-redux";
 import toast, {Toaster} from "react-hot-toast";
-import {Formik, Field} from "formik";
+import {Formik, Form, Field} from "formik";
 import {TextField} from "formik-mui";
 import Button from "@mui/material/Button";
 import {StyledForm, StyledLabel} from "./ContactForm.styled";
 import {addContact} from "../../redux/contacts/operations";
-import {validationSchema} from "../../validate/validationSchema.js";
-import {selectContacts} from "../../redux/contacts/selectors.js";
+import {validationSchema} from "../../validate/validationSchema";
+import {selectContacts} from "../../redux/contacts/selectors";
 import styles from "./ContactForm.module.css";
+import React from "react";
 
-const ContactForm = () => {
+interface ContactFormData {
+  name: string;
+  number: string;
+}
+
+interface ContactsData {
+  name: string;
+  number: string;
+}
+
+const ContactForm: React.FC = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
+  const contacts: Array<ContactsData> = useSelector(selectContacts);
 
   return (
     <>
@@ -21,13 +32,14 @@ const ContactForm = () => {
           name: "",
           number: "",
         }}
-        onSubmit={(values, actions) => {
+        onSubmit={(values: ContactFormData, actions) => {
           if (contacts.find((contact) => contact.name === values.name)) {
             toast.error(`${values.name} is already in contacts`);
             actions.resetForm();
             return;
           }
           dispatch(
+            // @ts-ignore
             addContact({
               name: values.name,
               number: values.number,
@@ -45,7 +57,7 @@ const ContactForm = () => {
               name="name"
               variant="standard"
               color="success"
-              sx={{minWidth: 400}}
+              fullWidth
               placeholder="a-z, A-Z"
             />
           </StyledLabel>
@@ -57,7 +69,7 @@ const ContactForm = () => {
               variant="standard"
               color="success"
               type="string"
-              sx={{minWidth: 400}}
+              fullWidth
               placeholder="+xxxxxxxxxx"
             />
           </StyledLabel>

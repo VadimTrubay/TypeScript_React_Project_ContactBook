@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import TableCell from "@mui/material/TableCell";
 import {useEffect, useState} from "react";
-import {fetchContacts} from "../../redux/contacts/operations.js";
+import {fetchContacts} from "../../redux/contacts/operations.ts";
 import SearchBox from "../SearchBox/SearchBox.jsx";
 import Box from "@mui/material/Box";
 import styles from "./ContactList.module.css";

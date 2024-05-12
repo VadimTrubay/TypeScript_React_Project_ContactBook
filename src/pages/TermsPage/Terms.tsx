@@ -1,7 +1,8 @@
 import styles from "./Terms.module.css";
 import Button from "@mui/material/Button";
+import React from "react";
 
-const Terms = () => {
+const Terms: React.FC = () => {
   return (
     <div className={styles.container}>
       <h1>Terms</h1>

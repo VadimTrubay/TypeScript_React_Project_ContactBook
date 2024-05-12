@@ -3,7 +3,7 @@ import {selectError} from "../../redux/contacts/selectors.js";
 import {AppBar, CircularProgress, Toolbar} from "@mui/material";
 import Logo from "../Logo/Logo.tsx";
 import UserMenu from "../UserMenu/UserMenu.jsx";
-import AuthNav from "../AuthNav/AuthNav.jsx";
+import AuthNav from "../AuthNav/AuthNav.tsx";
 import {selectIsLoggedIn} from "../../redux/auth/selectors.js";
 import {selectIsLoading} from "../../redux/contacts/selectors.js";
 import styles from "./Header.module.css";

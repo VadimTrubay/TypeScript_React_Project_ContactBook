@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {
   fetchContacts,
   addContact,
   deleteContact,
   updateContact,
-} from "./operations.js";
+} from "./operations.ts";
 import toast from "react-hot-toast";
 
 const initialContacts = {

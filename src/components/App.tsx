@@ -3,8 +3,8 @@ import styles from "./App.module.css"
 import {Route, Routes} from "react-router-dom";
 import {lazy, useEffect} from "react";
 import {Layout} from "./Layout/Layout.jsx";
-import {RestrictedRoute} from "./RestrictedRoute.jsx";
-import {PrivateRoute} from "./PrivateRoute.jsx";
+import {RestrictedRoute} from "./RestrictedRoute/RestrictedRoute.tsx";
+import {PrivateRoute} from "./PrivateRoute/PrivateRoute.js";
 import {useDispatch, useSelector} from "react-redux";
 import {selectIsRefreshing} from "../redux/auth/selectors.js";
 import {refreshUser} from "../redux/auth/operations.js";
@@ -13,7 +13,6 @@ import Box from "@mui/material/Box";
 import Terms from "../pages/TermsPage/Terms.jsx";
 import LoginForm from "../components/LoginForm/LoginForm.jsx";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm.jsx";
-import {boolean} from "yup";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage.jsx"));
@@ -24,6 +23,7 @@ const App = () => {
   const isRefreshing = useSelector<boolean>(selectIsRefreshing);
 
   useEffect(() => {
+    // @ts-ignore
     dispatch(refreshUser());
   }, [dispatch]);
 
