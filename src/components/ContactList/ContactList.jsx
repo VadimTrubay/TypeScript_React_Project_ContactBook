@@ -104,9 +104,9 @@ const ContactList = () => {
                       page * rowsPerPage,
                       page * rowsPerPage + rowsPerPage
                     )
-                    .map((item) => (
-                      <TableRow key={item.id} sx={{'&:nth-of-type(even)': {backgroundColor: '#efefef'}}}>
-                        <Contact item={item}/>
+                    .map((contact) => (
+                      <TableRow key={contact.id} sx={{'&:nth-of-type(even)': {backgroundColor: '#efefef'}}}>
+                        <Contact contact={contact}/>
                       </TableRow>
                     ))
                   : sortedContacts
@@ -114,9 +114,9 @@ const ContactList = () => {
                       page * rowsPerPage,
                       page * rowsPerPage + rowsPerPage
                     )
-                    .map((item) => (
-                      <TableRow key={item.id} sx={{'&:nth-of-type(even)': {backgroundColor: '#efefef'}}}>
-                        <Contact item={item}/>
+                    .map((contact) => (
+                      <TableRow key={contact.id} sx={{'&:nth-of-type(even)': {backgroundColor: '#efefef'}}}>
+                        <Contact contact={contact}/>
                       </TableRow>
                     ))}
               </TableBody>

@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {
   fetchContacts,
   addContact,
@@ -6,58 +6,70 @@ import {
   updateContact,
 } from "./operations.ts";
 import toast from "react-hot-toast";
+import {initialContactsType, ContactType} from "../../types/contactTypes.ts";
 
-const initialContacts = {
+const initialContacts: initialContactsType = {
   items: [],
   selectedItem: null,
   loading: false,
   error: null,
 };
 
-const handlePending = (state) => {
+const handlePending = (state: initialContactsType) => {
   state.loading = true;
 };
 
-const handleRejected = (state, action) => {
+const handleRejected = (
+  state: initialContactsType,
+  action: PayloadAction<string>
+) => {
   state.loading = false;
   state.error = action.payload;
   toast.error(`Error: ${action.payload}`);
 };
 
-const handleFetchContactsFulfilled = (state, action) => {
+const handleFetchContactsFulfilled = (
+  state: initialContactsType,
+  action: PayloadAction<ContactType[]>
+) => {
   state.loading = false;
   state.error = null;
   state.items = action.payload;
 };
 
-const handleAddContactFulfilled = (state, action) => {
+const handleAddContactFulfilled = (
+  state: initialContactsType,
+  action: PayloadAction<ContactType>
+) => {
   state.loading = false;
   state.error = null;
   state.items.push(action.payload);
 };
 
-const handleEditContactFulfilled = (state, action) => {
+const handleEditContactFulfilled = (
+  state: initialContactsType,
+  action: PayloadAction<ContactType>
+) => {
   state.loading = false;
   state.error = null;
-  state.items = state.items.map((contact) => {
-    if (contact.id === action.payload.id) {
-      return action.payload;
-    }
-    return contact;
-  });
+  state.items = state.items.map((contact) =>
+    contact.id === action.payload.id ? action.payload : contact
+  );
 };
 
-const handleDeleteContactFulfilled = (state, action) => {
+const handleDeleteContactFulfilled = (
+  state: initialContactsType,
+  action: PayloadAction<string>
+) => {
   state.loading = false;
   state.error = null;
-  state.items = state.items.filter(
-    (contact) => contact.id !== action.payload.id
-  );
+  state.items = state.items.filter((contact) => contact.id !== action.payload);
 };
 
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: initialContacts,
+  reducers: {},
   extraReducers: (builder) =>
     builder
       .addCase(fetchContacts.pending, handlePending)

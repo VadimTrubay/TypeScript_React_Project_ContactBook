@@ -5,8 +5,7 @@ import {
   newContact,
   removeContact,
 } from "../../api/api.ts";
-
-import {NewContactData, RemoveContactData, EditContactData} from "../../api/api.ts"
+import {addContactType, ContactType} from "../../types/contactTypes.ts";
 
 
 export const fetchContacts = createAsyncThunk(
@@ -14,8 +13,6 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await getContacts();
-  console.log(res)
-
       return res.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);
@@ -25,7 +22,7 @@ export const fetchContacts = createAsyncThunk(
 
 export const addContact = createAsyncThunk(
   "contacts/addContact",
-  async ({name, number}: NewContactData, thunkAPI) => {
+  async ({name, number}: addContactType, thunkAPI) => {
     try {
       const res = await newContact({name, number});
       return res.data;
@@ -37,7 +34,7 @@ export const addContact = createAsyncThunk(
 
 export const updateContact = createAsyncThunk(
   "contacts/editContact",
-  async ({id, name, number}: EditContactData, thunkAPI) => {
+  async ({id, name, number}: ContactType, thunkAPI) => {
     try {
       const res = await editContact({id, name, number});
       return res.data;
@@ -49,9 +46,9 @@ export const updateContact = createAsyncThunk(
 
 export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
-  async (id: RemoveContactData, thunkAPI) => {
+  async (id: string, thunkAPI) => {
     try {
-      const res = await removeContact(id);
+      const res = await removeContact({id});
       return res.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);

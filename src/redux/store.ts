@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import {configureStore} from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -10,9 +10,9 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { contactsReducer } from "./contacts/slice";
-import { filtersReducer } from "./filters/slice";
-import { authReducer } from "./auth/slice";
+import {contactsReducer} from "./contacts/slice";
+import {filtersReducer} from "./filters/slice";
+import {authReducer} from "./auth/slice";
 
 const authPersistConfig = {
   key: "auth",
@@ -20,9 +20,11 @@ const authPersistConfig = {
   whitelist: ["token"],
 };
 
+type AuthPersistConfigType = typeof authPersistConfig; // Define type for authPersistConfig
+
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, authReducer),
+    auth: persistReducer<AuthPersistConfigType>(authPersistConfig, authReducer), // Use the defined type
     contacts: contactsReducer,
     filters: filtersReducer,
   },
@@ -36,3 +38,6 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+export type RouteState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

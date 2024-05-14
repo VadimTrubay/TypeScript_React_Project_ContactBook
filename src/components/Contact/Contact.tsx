@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import TableCell from "@mui/material/TableCell";
 import Button from "@mui/material/Button";
@@ -19,23 +19,33 @@ import Box from "@mui/material/Box";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import {useFormik} from "formik";
 import {validationSchema} from "../../validate/validationSchema.js";
+import {ContactPropsType, FullContactType} from "../../types/contactTypes.js";
+import {AppDispatch} from "../../redux/store.ts";
 
-const Contact = ({item: {name, number, id}}) => {
-  const [openEditModal, setOpenEditModal] = useState(false);
-  const [openDeleteModal, setOpenDeleteModal] = useState(false);
-  const dispatch = useDispatch();
+interface Contact extends ContactPropsType {
+  handleDeleteContact: (id: string) => void;
+  handleOpenEditModal: () => void;
+  handleCloseEditModal: () => void;
+}
+
+const Contact: React.FC<Contact> = ({contact: {id, name, number}}) => {
+  const [openEditModal, setOpenEditModal] = useState<boolean>(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
+  const dispatch: AppDispatch = useDispatch();
 
   const handleOpenEditModal = () => setOpenEditModal(true);
   const handleCloseEditModal = () => setOpenEditModal(false);
   const handleOpenDeleteModal = () => setOpenDeleteModal(true);
   const handleCloseDeleteModal = () => setOpenDeleteModal(false);
 
-  const formik = useFormik({
-    initialValues: {
-      id: id,
-      name: name,
-      number: number,
-    },
+  const initialValueUpdate: FullContactType = {
+    id: id,
+    name: name,
+    number: number,
+  }
+
+  const formik: any = useFormik({
+    initialValues: initialValueUpdate,
     validationSchema: validationSchema,
     onSubmit: (values) => {
       if (formik.isValid) {

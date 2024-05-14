@@ -9,19 +9,12 @@ import {validationSchema} from "../../validate/validationSchema";
 import {selectContacts} from "../../redux/contacts/selectors";
 import styles from "./ContactForm.module.css";
 import React from "react";
+import {ContactFormDataType, ContactType} from "../../types/contactTypes.ts";
 
-interface Contact {
-  name: string;
-  number: string;
-}
-
-
-interface ContactFormData extends Contact {
-}
 
 const ContactForm: React.FC = () => {
   const dispatch = useDispatch();
-  const contacts: Contact[] = useSelector(selectContacts);
+  const contacts: Array<ContactType> = useSelector(selectContacts);
 
   return (
     <>
@@ -31,7 +24,7 @@ const ContactForm: React.FC = () => {
           name: "",
           number: "",
         }}
-        onSubmit={(values: ContactFormData, actions) => {
+        onSubmit={(values: ContactFormDataType, actions) => {
           if (contacts.find((contact) => contact.name === values.name)) {
             toast.error(`${values.name} is already in contacts`);
             actions.resetForm();

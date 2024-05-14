@@ -4,7 +4,7 @@ import {selectIsLoggedIn} from "../../redux/auth/selectors";
 import React from "react";
 
 interface RestrictedRouteProps {
-  component: React.ComponentType;
+  component: React.ReactNode;
   redirectTo?: string;
 }
 

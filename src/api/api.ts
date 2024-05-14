@@ -1,34 +1,21 @@
 import axios, {AxiosResponse, AxiosError} from "axios";
+import {addContactType, ContactType, idContactType} from "../types/contactTypes.ts";
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 
-export interface RemoveContactData {
-  id: string;
-}
 
-export interface NewContactData {
-  name: string;
-  number: string;
-}
-
-export interface GetContactsData extends RemoveContactData, NewContactData {
-}
-
-export interface EditContactData extends RemoveContactData, NewContactData {
-}
-
-export const getContacts = async (): Promise<AxiosResponse<GetContactsData[]>> => {
+export const getContacts = async (): Promise<AxiosResponse<ContactType[]>> => {
   return await axios.get("/contacts");
 };
 
-export const newContact = async ({name, number}: NewContactData): Promise<AxiosResponse<NewContactData>> => {
+export const newContact = async ({name, number}: addContactType): Promise<AxiosResponse<ContactType>> => {
   return await axios.post("/contacts", {name, number});
 };
 
-export const removeContact = async (id: RemoveContactData): Promise<AxiosResponse<RemoveContactData>> => {
+export const removeContact = async (id: idContactType): Promise<AxiosResponse<idContactType>> => {
   return await axios.delete(`/contacts/${id}`);
 };
 
-export const editContact = async ({id, name, number}: EditContactData): Promise<AxiosResponse<EditContactData>> => {
+export const editContact = async ({id, name, number}: ContactType): Promise<AxiosResponse<ContactType>> => {
   return await axios.patch(`/contacts/${id}`, {name, number});
 };
