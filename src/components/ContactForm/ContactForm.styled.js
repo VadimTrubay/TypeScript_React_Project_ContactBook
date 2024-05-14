@@ -1,5 +1,5 @@
-import { styled } from "styled-components";
-import { Form } from "formik";
+import {styled} from "styled-components";
+import {Form} from "formik";
 
 export const StyledForm = styled(Form)`
   display: flex;
@@ -15,4 +15,5 @@ export const StyledLabel = styled.label`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 350px;
 `;

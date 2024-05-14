@@ -10,19 +10,18 @@ import {selectContacts} from "../../redux/contacts/selectors";
 import styles from "./ContactForm.module.css";
 import React from "react";
 
-interface ContactFormData {
+interface Contact {
   name: string;
   number: string;
 }
 
-interface ContactsData {
-  name: string;
-  number: string;
+
+interface ContactFormData extends Contact {
 }
 
 const ContactForm: React.FC = () => {
   const dispatch = useDispatch();
-  const contacts: Array<ContactsData> = useSelector(selectContacts);
+  const contacts: Contact[] = useSelector(selectContacts);
 
   return (
     <>

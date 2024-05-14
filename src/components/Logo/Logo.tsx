@@ -2,8 +2,9 @@ import Typography from "@mui/material/Typography";
 import AdbIcon from "@mui/icons-material/Adb";
 import styles from "./Logo.module.css";
 import {NavLink} from "react-router-dom";
+import React from "react";
 
-const Logo = () => {
+const Logo: React.FC = () => {
   return (
     <div className={styles.container}>
       <NavLink className={styles.nav_link} to='/'>

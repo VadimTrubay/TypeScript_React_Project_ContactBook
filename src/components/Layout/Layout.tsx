@@ -5,12 +5,12 @@ import Header from "../Header/Header.jsx";
 import Box from "@mui/material/Box";
 import Navigation from "../Navigation/Navigation.jsx";
 
-interface LayoutType {
+interface LayoutProps {
   children: React.ReactNode;
   className: string;
 }
 
-export const Layout = ({children}: LayoutType) => {
+export const Layout = ({children}: LayoutProps) => {
   return (
     <div style={{maxWidth: 1240, margin: "0 auto", padding: "0 15px"}}>
       <Header/>
