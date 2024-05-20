@@ -19,7 +19,7 @@ import Box from "@mui/material/Box";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import {useFormik} from "formik";
 import {validationSchema} from "../../validate/validationSchema.js";
-import {ContactPropsType, FullContactType} from "../../types/contactTypes.js";
+import { ContactPropsType, ContactType } from '../../types/contactTypes.js';
 import {AppDispatch} from "../../redux/store.ts";
 
 interface Contact extends ContactPropsType {
@@ -38,7 +38,7 @@ const Contact: React.FC<Contact> = ({contact: {id, name, number}}) => {
   const handleOpenDeleteModal = () => setOpenDeleteModal(true);
   const handleCloseDeleteModal = () => setOpenDeleteModal(false);
 
-  const initialValueUpdate: FullContactType = {
+  const initialValueUpdate: ContactType = {
     id: id,
     name: name,
     number: number,

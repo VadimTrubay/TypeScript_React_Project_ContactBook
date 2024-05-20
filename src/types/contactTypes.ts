@@ -24,5 +24,5 @@ export interface initialContactsType {
   error: string | null;
 }
 
-export interface ContactFormDataType extends ContactType {
+export interface ContactFormDataType extends addContactType {
 }
