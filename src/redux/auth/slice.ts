@@ -1,6 +1,7 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {register, logIn, logOut, refreshUser} from "./operations";
 import {authType} from "../../types/authTypes.ts";
+
 
 const initialAuth: authType = {
   user: {
@@ -15,6 +16,7 @@ const initialAuth: authType = {
 const authSlice = createSlice({
   name: "auth",
   initialState: initialAuth,
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(register.fulfilled, (state, action) => {

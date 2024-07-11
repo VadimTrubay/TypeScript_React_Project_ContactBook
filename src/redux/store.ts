@@ -20,11 +20,11 @@ const authPersistConfig = {
   whitelist: ["token"],
 };
 
-type AuthPersistConfigType = typeof authPersistConfig; // Define type for authPersistConfig
+type AuthPersistedState = ReturnType<typeof authReducer>;// Define type for authPersistConfig
 
 export const store = configureStore({
   reducer: {
-    auth: persistReducer<AuthPersistConfigType>(authPersistConfig, authReducer), // Use the defined type
+    auth: persistReducer<AuthPersistedState>(authPersistConfig, authReducer), // Use the defined type
     contacts: contactsReducer,
     filters: filtersReducer,
   },
